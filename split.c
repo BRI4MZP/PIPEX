@@ -6,7 +6,7 @@
 /*   By: briveiro <briveiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:22:22 by briveiro          #+#    #+#             */
-/*   Updated: 2023/01/20 15:56:55 by briveiro         ###   ########.fr       */
+/*   Updated: 2023/01/26 03:19:54 by briveiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,22 +50,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (s2);
 }
 
-char	**ft_split(char const *s, char c)
-{
-	char	**cadena;
-	size_t	palabras;
-
-	if (!s)
-		return (NULL);
-	palabras = contador(s, c);
-	cadena = malloc(sizeof(char **) * (palabras + 1));
-	if (!cadena)
-		return (NULL);
-	creador(cadena, s, c, palabras);
-	return (cadena);
-}
-
-static size_t	contador(char const *s, char c)
+size_t	contador(char const *s, char c)
 {
 	size_t	contadorpalablas;
 	size_t	coincidencia;
@@ -86,7 +71,7 @@ static size_t	contador(char const *s, char c)
 	return (contadorpalablas);
 }
 
-static void	creador(char **cadena, char const *s, char c, size_t palabras)
+void	creador(char **cadena, char const *s, char c, size_t palabras)
 {
 	char	*cambio;
 
@@ -107,4 +92,19 @@ static void	creador(char **cadena, char const *s, char c, size_t palabras)
 		cadena++;
 	}
 	*cadena = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**cadena;
+	size_t	palabras;
+
+	if (!s)
+		return (NULL);
+	palabras = contador(s, c);
+	cadena = malloc(sizeof(char **) * (palabras + 1));
+	if (!cadena)
+		return (NULL);
+	creador(cadena, s, c, palabras);
+	return (cadena);
 }

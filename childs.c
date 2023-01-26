@@ -6,7 +6,7 @@
 /*   By: briveiro <briveiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:26:15 by briveiro          #+#    #+#             */
-/*   Updated: 2023/01/24 04:35:58 by briveiro         ###   ########.fr       */
+/*   Updated: 2023/01/26 01:03:17 by briveiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	first(t_pipex *pipex, char **argv, char **env, char **aux)
 	pipex->full = all_path(aux, pipex->argv[0]);
 	if (!pipex->full)
 	{
+		free_childs(pipex);
 		printf("ERRORRRRRRR");
 		exit(1);
 	}
@@ -52,6 +53,7 @@ void	last(t_pipex *pipex, char **argv, char **env, char **aux)
 	pipex->full = all_path(aux, pipex->argv[0]);
 	if (!pipex->full)
 	{
+		free_childs(pipex);
 		printf("ERRORRRRRRR");
 		exit(1);
 	}

@@ -6,7 +6,7 @@
 /*   By: briveiro <briveiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:01:59 by briveiro          #+#    #+#             */
-/*   Updated: 2023/01/24 06:32:16 by briveiro         ###   ########.fr       */
+/*   Updated: 2023/01/26 03:19:03 by briveiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	**all_the_path(char **path)
 {
-	t_pipex	*pipex;
 	char	**spl;
 	int		count;
+	char	*tmp;
 
 	count = 0;
 	while (path[count])
@@ -28,8 +28,11 @@ char	**all_the_path(char **path)
 	}
 	spl = ft_split(&path[count][5], ':');
 	count = -1;
-	while (spl[++count])
-		spl[count] = ft_strjoin(spl[count], "/");
+	while (spl[++count]){
+		tmp = ft_strjoin(spl[count], "/");
+		free(spl[count]);
+		spl[count] = tmp;
+	}
 	return (spl);
 }
 
