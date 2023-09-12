@@ -6,7 +6,7 @@
 /*   By: briveiro <briveiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:13:06 by briveiro          #+#    #+#             */
-/*   Updated: 2023/01/26 03:20:28 by briveiro         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:51:02 by briveiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #define NOT_YET -1
 #define END_READ 0
 #define END_WRITE 1
+
 typedef struct s_pipex
 {
 	pid_t	pid1;
@@ -34,7 +35,7 @@ typedef struct s_pipex
 	char	**path;
 	char	*full;
 	int		pipe[2];
-	
+
 }				t_pipex;
 
 char 	**all_the_path(char **path);
@@ -54,9 +55,9 @@ size_t	contador(char const *s, char c);
 // char 	**ft_slasher(char **str);
 void	creador(char **cadena, char const *s, char c, size_t palabras);
 // char *get_path(char **path);
-t_pipex *ft_initpipex();
+t_pipex *ft_initpipex(void);
 void	first(t_pipex *pipex, char **argv, char **env, char **aux);
 void	last(t_pipex *pipex, char **argv, char **env, char **aux);
-int		output_error(char *error);
+int	    output_msg(char *error);
 // status para el estado de los hijos
 // pid identificador proceso de hijos

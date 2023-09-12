@@ -6,7 +6,7 @@
 /*   By: briveiro <briveiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:53:48 by briveiro          #+#    #+#             */
-/*   Updated: 2023/01/21 17:44:55 by briveiro         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:50:26 by briveiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ void	ft_bzero(void *s, size_t n)
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	connt;
 	char	*ret;
 
-	connt = 0;
 	ret = malloc(count * size);
 	if (ret)
 	{
@@ -51,6 +49,7 @@ size_t	ft_strlen(const char *s)
 	}
 	return (count);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	p;

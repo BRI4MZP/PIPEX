@@ -6,7 +6,7 @@
 /*   By: briveiro <briveiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:29:46 by briveiro          #+#    #+#             */
-/*   Updated: 2023/01/26 03:21:45 by briveiro         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:46:41 by briveiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 void	free_pipes(t_pipex *pipex)
 {
 	int	count;
+
 	close(pipex->pipe[0]);
 	close(pipex->pipe[1]);
 	count = 0;
@@ -27,39 +28,33 @@ void	free_pipes(t_pipex *pipex)
 		free(pipex->envv[count++]);
 	free(pipex->envv);
 }
+
 int	main(int argc, char **argv, char **envp)
 {
 	t_pipex	*pipex;
 
-	// atexit(ft_void);
 	if (argc != 5)
-		printf("%s", "Número de argumentos incorrecto");
+		return (output_msg("Error: Wrong number of arguments\n"));
 	pipex = ft_initpipex();
 	pipex->fdin = open(argv[1], O_RDONLY);
 	if (pipex->fdin < 0)
-		printf("%s\n", "EL ARCHIVO DE LECTURA NO EXISTE BRO");
-	pipex->fdout = open(argv[4], O_CREAT | O_RDWR | O_TRUNC);
+		output_msg("Wrong input file\n");
+	pipex->fdout = open(argv[argc - 1], O_CREAT | O_RDWR | O_TRUNC);
 	if (pipex->fdout < 0)
-		printf("%s\n", "ARCHIVO DE ESCRITURA ERRONEO");
+		output_msg("Wrong output file\n");
 	if (pipe(pipex->pipe) < 0)
-		printf("%s", "error en pipe");
+		output_msg("Error: Pipe failure\n");
 	pipex->envv = all_the_path(envp);
 	pipex->pid1 = fork();
-	if (pipex->pid1 == 0){
-		write(1, "holdsfivns", 10);
+	if (pipex->pid1 == 0)
 		first(pipex, argv, envp, pipex->envv);
-	}
 	pipex->pid2 = fork();
-	if (pipex->pid2 == 0){
-		write(1, "hols", 4);
-		last(pipex, argv, envp,  pipex->envv);
-	}
+	if (pipex->pid2 == 0)
+		last(pipex, argv, envp, pipex->envv);
 	free_pipes(pipex);
 	waitpid(pipex->pid1, NULL, 0);
 	waitpid(pipex->pid2, NULL, 0);
-	// free_childs(pipex);
 	free(pipex);
-	// free_pipex(pipex);
 	return (0);
 }
 

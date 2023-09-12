@@ -6,13 +6,13 @@
 /*   By: briveiro <briveiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 22:42:24 by briveiro          #+#    #+#             */
-/*   Updated: 2023/01/24 04:36:31 by briveiro         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:38:23 by briveiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	output_error(char *error)
+int	output_msg(char *error)
 {
 	write(2, error, ft_strlen(error));
 	return (1);

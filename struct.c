@@ -6,13 +6,13 @@
 /*   By: briveiro <briveiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:03:16 by briveiro          #+#    #+#             */
-/*   Updated: 2023/01/26 03:20:09 by briveiro         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:50:51 by briveiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-t_pipex *ft_initpipex()
+t_pipex *ft_initpipex(void)
 {
 	t_pipex *pipex;
 

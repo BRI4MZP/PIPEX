@@ -1,1 +1,25 @@
-      16
+total 224
+drwxr-xr-x@ 24 briamzp  staff    768 Sep 12 17:28 .
+drwxr-xr-x@ 10 briamzp  staff    320 Sep 12 17:28 ..
+drwxr-xr-x@ 13 briamzp  staff    416 Sep 12 17:53 .git
+-rw-r--r--   1 briamzp  staff   1333 Jan 29  2023 Makefile
+-rw-r--r--   1 briamzp  staff   1844 Jan 29  2023 childs.c
+-rw-r--r--   1 briamzp  staff   1808 Sep 12 17:55 childs.o
+-rw-r--r--   1 briamzp  staff    993 Sep 12 17:38 error.c
+-rw-r--r--   1 briamzp  staff    640 Sep 12 17:55 error.o
+-rw-r--r--   1 briamzp  staff   1277 Sep 12 17:52 free.c
+-rw-r--r--   1 briamzp  staff    968 Sep 12 17:55 free.o
+-rw-r--r--   1 briamzp  staff   2483 Sep 12 17:46 main.c
+-rw-r--r--   1 briamzp  staff   1992 Sep 12 17:55 main.o
+-rw-r--r--   1 briamzp  staff      0 Sep 12 18:01 output.txt
+-rw-r--r--   1 briamzp  staff   1588 Jan 29  2023 path.c
+-rw-r--r--   1 briamzp  staff   1080 Sep 12 17:55 path.o
+-rwxr-xr-x   1 briamzp  staff  34754 Sep 12 17:55 pipex
+-rw-r--r--   1 briamzp  staff   2244 Sep 12 17:51 pipex.h
+-rw-r--r--   1 briamzp  staff    101 Jan 29  2023 prueba.txt
+-rw-r--r--   1 briamzp  staff   2572 Jan 29  2023 split.c
+-rw-r--r--   1 briamzp  staff   2440 Sep 12 17:55 split.o
+-rw-r--r--   1 briamzp  staff   1362 Sep 12 17:50 struct.c
+-rw-r--r--   1 briamzp  staff   1080 Sep 12 17:55 struct.o
+-rw-r--r--   1 briamzp  staff   1557 Sep 12 17:50 utilis.c
+-rw-r--r--   1 briamzp  staff   1240 Sep 12 17:55 utilis.o
